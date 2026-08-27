@@ -567,9 +567,6 @@ parameter_meta {
     File featuremap_index = featuremap_index_output
     File? featuremap_random_sample = CreateFeatureMap.featuremap_random_sample
     File? featuremap_random_sample_index = CreateFeatureMap.featuremap_random_sample_index
-    Float downsampling_rate = CreateFeatureMap.downsampling_rate
-    Boolean snv_qualities_assigned = snv_qualities_can_be_assigned
-    Boolean used_self_trained_model = snv_qualities_assigned && (!use_pre_trained_model)
     File? raw_filtered_featuremap_parquet = PrepareRawFeatureMap.filtered_featuremap_parquet
     File? random_sample_trinuc_freq_stats = CreateFeatureMap.random_sample_trinuc_freq
 

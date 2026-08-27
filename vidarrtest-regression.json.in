@@ -151,14 +151,6 @@
                 ],
                 "type": "ALL"
             },
-            "SingleReadSNV.downsampling_rate": {
-                "contents": [
-                    {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_single_read_snv_partial_@JENKINSID@"
-                    }
-                ],
-                "type": "ALL"
-            },
             "SingleReadSNV.featuremap": {
                 "contents": [
                     {
@@ -239,23 +231,7 @@
                 ],
                 "type": "ALL"
             },
-            "SingleReadSNV.snv_qualities_assigned": {
-                "contents": [
-                    {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_single_read_snv_partial_@JENKINSID@"
-                    }
-                ],
-                "type": "ALL"
-            },
             "SingleReadSNV.srsnv_metadata_json": {
-                "contents": [
-                    {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_single_read_snv_partial_@JENKINSID@"
-                    }
-                ],
-                "type": "ALL"
-            },
-            "SingleReadSNV.used_self_trained_model": {
                 "contents": [
                     {
                         "outputDirectory": "@SCRATCH@/@DATE@_Workflow_single_read_snv_partial_@JENKINSID@"
