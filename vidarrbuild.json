@@ -1,0 +1,6 @@
+{
+    "names": [
+        "single_read_snv"
+    ],
+    "wdl": "single_read_snv.wdl"
+}
