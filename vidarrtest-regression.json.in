@@ -157,6 +157,7 @@
                 "HAMDIST",
                 "HAMDIST_FILT"
             ],
+            "SingleReadSNV.Globals.glob": null,
             "SingleReadSNV.Inference.jobMemory": null,
             "SingleReadSNV.Inference.modules": null,
             "SingleReadSNV.Inference.threads": null,
