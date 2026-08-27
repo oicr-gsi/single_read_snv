@@ -89,6 +89,7 @@
             "SingleReadSNV.ExtractSorterStatsMetrics.modules": null,
             "SingleReadSNV.ExtractSorterStatsMetrics.timeout": null,
             "SingleReadSNV.featuremap_params": {
+                "attributes_prefix": null,
                 "generate_random_sample": true,
                 "min_mapq": 1,
                 "padding_size": 5,
@@ -96,6 +97,11 @@
                 "exclude_nan_scores": true,
                 "include_dup_reads": true,
                 "keep_supplementary": false,
+                "max_score_to_emit": null,
+                "min_score_to_emit": null.
+                "number_of_reads_per_var": null,
+                "pileup_window_width": null,
+                "somatic_filter_mode": null,
                 "surrounding_quality_size": 20,
                 "reference_context_size": 3,
                 "cram_tags_to_copy": [
