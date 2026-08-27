@@ -98,7 +98,7 @@
                 "include_dup_reads": true,
                 "keep_supplementary": false,
                 "max_score_to_emit": null,
-                "min_score_to_emit": null.
+                "min_score_to_emit": null,
                 "number_of_reads_per_var": null,
                 "pileup_window_width": null,
                 "somatic_filter_mode": null,
