@@ -73,7 +73,8 @@
                   ]
                 },
                 "type": "EXTERNAL"
-              }            },
+              }
+            },
             "SingleReadSNV.base_file_name": "OCT_011291_Ce_P_nn_1-1_LB04",
             "SingleReadSNV.cloud_provider_override": null,
             "SingleReadSNV.compute_md5.jobMemory": null,
@@ -105,8 +106,30 @@
                     "DS:i",
                     "NM:i"
                 ],
-                "read_filters": "/.mounts/labs/gsi/testdata/single_read_snv/input_data/create_featuremap_read_filters.json",
-                "bed_file": "/.mounts/labs/gsi/testdata/single_read_snv/intervals/wgs_calling_regions.without_encode_blacklist.hg38.bed"
+                "read_filters": {
+                  "contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/single_read_snv/input_data/create_featuremap_read_filters.json",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                   ]
+                  },
+                  "type": "EXTERNAL"
+                  },
+                 "bed_file": {
+                  "contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/single_read_snv/intervals/wgs_calling_regions.without_encode_blacklist.hg38.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                   ]
+                  },
+                  "type": "EXTERNAL"
+                  }
             },
             "SingleReadSNV.features": [
                 "REF",
