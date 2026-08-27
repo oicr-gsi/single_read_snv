@@ -243,7 +243,8 @@
                   ]
                 },
                 "type": "EXTERNAL"
-            },
+            }
+        },
         "description": "Single Read SNV test in limited mode with hg38 and downsampled Ultima data",
         "engineArguments": {
            "write_to_cache": false,
@@ -357,5 +358,4 @@
             }
         ]
     }
-  }
 ]
