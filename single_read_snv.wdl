@@ -439,7 +439,7 @@ parameter_meta {
   }
 
   Boolean sufficient_coverage_to_train_model = (mean_coverage_used >= min_coverage_to_train_model)
-  Boolean can_train_model = (sufficient_coverage_to_train_model) && (featuremap_params.generate_random_sample)
+  Boolean can_train_model = (sufficient_coverage_to_train_model) && select_first([featuremap_params.generate_random_sample, false])
   Boolean snv_qualities_can_be_assigned = can_train_model
 
   if (can_train_model && (!use_pre_trained_model)) {
