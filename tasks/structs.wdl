@@ -167,7 +167,7 @@ struct FeatureMapParams {
   Int? number_of_reads_per_var      # -l number of reads per variant to use for feature calculation
   Int? pileup_window_width          # -w flag pileup window width
   Boolean? somatic_filter_mode      # -F flag use somatic filter mode, meaning that only the first sample is examined for quality filter (FILT=1)
-  Boolean generate_random_sample    # Whether to generate a random sample for the featuremap
+  Boolean? generate_random_sample   # Whether to generate a random sample for the featuremap
 }
 
 struct SingleReadSNVParams {
