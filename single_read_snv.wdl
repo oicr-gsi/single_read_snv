@@ -27,6 +27,12 @@ version 1.0
 # 1.10.1 Added LA_7 adapter version
 # 1.7.0 Initial implementation of single_read_snv wdl
 
+# OICR NOTICE: This code and the code of linked tasks was modified to meet the requirements
+# of IT infrastructure available to Genome Sequencing Informatics group at the stage of
+# testing/deployment. The main change - docker containers are pre-loaded and run using Apptainer (Berkeley National Labs)
+# multiple tasks were modified to use modules rather than docker containers.
+# Additional code for resolving symbolic links was added.
+
 import "tasks/structs.wdl" as Structs
 import "tasks/general_tasks.wdl" as UGGeneralTasks
 import "tasks/single_read_snv_tasks.wdl" as SRSNVTasks

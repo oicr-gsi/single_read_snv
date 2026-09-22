@@ -417,7 +417,6 @@ task CreateFeatureMap {
     memory: "~{jobMemory} GB"
     timeout: "~{timeout}"
     modules: "~{modules}"
-    continueOnReturnCode: [0,134]
   }
 
   output {
