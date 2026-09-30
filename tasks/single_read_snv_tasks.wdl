@@ -235,7 +235,7 @@ task CreateFeatureMap {
     String docker
     File monitoring_script
     Int jobMemory
-    Int timeout = 186
+    Int timeout = 56
     Int cpus = 2
     String modules = "apptainer/1.4.5 bcftools/1.9 jq/1.8.1"
     Float? max_coverage_factor
@@ -443,6 +443,7 @@ task Inference {
     String modules = "bcftools/1.9 apptainer/1.4.5"
     Int threads = 4
     Int jobMemory = 8
+    Int timeout = 24
   }
 
   Float featuremap_size = size(featuremap, "GiB")
@@ -483,6 +484,7 @@ task Inference {
   runtime {
     cpu: "~{threads}"
     modules: "~{modules}"
+    timeout: "~{timeout}"
     memory: "~{jobMemory} GB"
   }
 

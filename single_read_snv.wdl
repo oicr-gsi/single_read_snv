@@ -31,7 +31,7 @@ version 1.0
 # of IT infrastructure available to Genome Sequencing Informatics group at the stage of
 # testing/deployment. The main change - docker containers are pre-loaded and run using Apptainer (Berkeley National Labs)
 # multiple tasks were modified to use modules rather than docker containers.
-# Additional code for resolving symbolic links was added.
+# Additional code for resolving symbolic links was added
 
 import "tasks/structs.wdl" as Structs
 import "tasks/general_tasks.wdl" as UGGeneralTasks
@@ -573,6 +573,9 @@ parameter_meta {
     File featuremap_index = featuremap_index_output
     File? featuremap_random_sample = CreateFeatureMap.featuremap_random_sample
     File? featuremap_random_sample_index = CreateFeatureMap.featuremap_random_sample_index
+    Float downsampling_rate = CreateFeatureMap.downsampling_rate
+    Boolean snv_qualities_assigned = snv_qualities_can_be_assigned
+    Boolean used_self_trained_model = snv_qualities_assigned && (!use_pre_trained_model)
     File? raw_filtered_featuremap_parquet = PrepareRawFeatureMap.filtered_featuremap_parquet
     File? random_sample_trinuc_freq_stats = CreateFeatureMap.random_sample_trinuc_freq
 
