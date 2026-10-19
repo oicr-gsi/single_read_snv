@@ -233,6 +233,7 @@ task CreateFeatureMap {
     FeaturemapAnnotationFiles annotation_files
     Array[SingleReadSNVModel]? model_files         # Model SingleReadSNVModel structs (-M flag)
     String docker
+    String temp_dir
     File monitoring_script
     Int jobMemory
     Int timeout = 56
@@ -367,7 +368,7 @@ task CreateFeatureMap {
 
     ##################### Run snvfind #####################
     # Run snvfind with parameters
-    export APPTAINER_TMPDIR=/tmp 
+    export APPTAINER_TMPDIR=~{temp_dir}
     apptainer exec \
       --bind ${PWD}:${PWD},${REFDIR}:${REFDIR} \
       $BIND_ARGS \
@@ -441,6 +442,7 @@ task Inference {
     File monitoring_script
     String docker
     String modules = "bcftools/1.9 apptainer/1.4.5"
+    String temp_dir
     Int threads = 4
     Int jobMemory = 8
     Int timeout = 24
@@ -464,7 +466,7 @@ task Inference {
       cp ~{srsnv_metadata_json} model_files/srsnv_metadata.json
 
       # Run inference with snvqual
-      export APPTAINER_TMPDIR=/tmp
+      export APPTAINER_TMPDIR=~{temp_dir}
       apptainer exec \
       --bind ${PWD}:${PWD} \
       --bind ${FMAPDIR}:${FMAPDIR} \
@@ -505,6 +507,7 @@ task CreateReport {
     Int    preemptible_tries
     File   monitoring_script
     String modules = "apptainer/1.4.5"
+    String temp_dir
     Int    jobMemory = 32
     Int    threads      = 16
   }
@@ -523,7 +526,7 @@ task CreateReport {
     # Copy metadata and model files to PWD (Cromwell and Omics path support)
     cp ~{sep=" " model_files} .
     cp ~{srsnv_metadata_json} srsnv_metadata.json
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     apptainer exec \
       --bind ${PWD}:${PWD} \
       --bind ${FMAPDIR}:${FMAPDIR} \

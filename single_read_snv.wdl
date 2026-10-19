@@ -84,6 +84,7 @@ input {
 
   Float? mean_coverage
   String? total_aligned_bases
+  String temp_dir = "$TMP"
   # winval validations
   #@wv not(" " in base_file_name or "#" in base_file_name or ',' in base_file_name)
   #@wv not("test" in base_file_name or "train" in base_file_name)
@@ -377,6 +378,11 @@ parameter_meta {
         help: "Metadata JSON file for the SNV quality model, containing information about the model, features, and training parameters",
         category: "output_optional"
     }
+    temp_dir: {
+        type: "String",
+        help: "Temporary directory, primarily to use with apptainer, container manager",
+        category: "param_optional"
+    }
 }
 
 
@@ -407,6 +413,7 @@ parameter_meta {
         sorter_json_stats_files = sorter_json_stats_file_list_,
         docker = global.ugbio_srsnv_docker,
         monitoring_script = monitoring_script,
+        temp_dir = temp_dir
     }
   }
   Float mean_coverage_used = select_first([mean_coverage, ExtractSorterStatsMetrics.mean_coverage])
@@ -441,6 +448,7 @@ parameter_meta {
       docker = global.featuremap_docker,
       monitoring_script = monitoring_script,
       jobMemory = override_memory_gb_CreateFeatureMap,
+      temp_dir = temp_dir,
       model_files = pre_trained_model_files_array
   }
 
@@ -517,6 +525,7 @@ parameter_meta {
         model_files          = TrainModel.model_files,
         basename             = base_file_name_sub,
         docker               = global.ugbio_srsnv_docker,
+        temp_dir             = temp_dir,
         preemptible_tries    = preemptibles,
         monitoring_script    = monitoring_script
     }
@@ -539,6 +548,7 @@ parameter_meta {
           srsnv_metadata_json = srsnv_metadata_json_,
           featuremap          = CreateFeatureMap.featuremap,
           monitoring_script   = monitoring_script,  #!FileCoercion
+          temp_dir            = temp_dir,
           docker              = global.featuremap_docker
     }
   }

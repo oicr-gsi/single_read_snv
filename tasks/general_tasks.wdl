@@ -984,6 +984,7 @@ task ExtractSorterStatsMetrics {
       String modules = "apptainer/1.4.5 jq/1.8.1"
       Int jobMemory = 2
       Int timeout = 2
+      String temp_dir
     }
 
     parameter_meta {
@@ -993,6 +994,7 @@ task ExtractSorterStatsMetrics {
       modules: "Used modules"
       jobMemory: "Allocated RAM in Gigs"
       timeout: "Timeout in Hours"
+      temp_dir: "Temporary directory for apptainer"
     }
 
     String mean_coverage_output_file = "mean_coverage.txt"
@@ -1007,7 +1009,7 @@ task ExtractSorterStatsMetrics {
         TOTAL_COVERAGE_SUM=0.0
         TOTAL_ALIGNED_BASES=0
 
-        export APPTAINER_TMPDIR=/tmp
+        export APPTAINER_TMPDIR=~{temp_dir}
         # Process each file
         for stats_file in ~{sep=" " sorter_json_stats_files}; do
             echo "Processing file: $stats_file"
