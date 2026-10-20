@@ -167,6 +167,7 @@
             "SingleReadSNV.Globals.glob": null,
             "SingleReadSNV.Inference.jobMemory": null,
             "SingleReadSNV.Inference.modules": null,
+            "SingleReadSNV.Inference.timeout": null,
             "SingleReadSNV.Inference.threads": null,
             "SingleReadSNV.input_cram_bam_index_list": [
               {"contents": {
