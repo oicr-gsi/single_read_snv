@@ -76,7 +76,7 @@
               }
             },
             "SingleReadSNV.base_file_name": "OCT_011291_Ce_P_nn_1-1_LB04",
-            ""SingleReadSNV.temp_dir": "/tmp",
+            "SingleReadSNV.temp_dir": "/tmp",
             "SingleReadSNV.cloud_provider_override": "gcp",
             "SingleReadSNV.compute_md5.jobMemory": null,
             "SingleReadSNV.CreateFeatureMap.cpus": null,
