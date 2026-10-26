@@ -512,6 +512,7 @@ parameter_meta {
             features=features,
             base_file_name = base_file_name_sub,
             docker = global.ugbio_srsnv_docker,
+            temp_dir = temp_dir,
             pipeline_version = pipeline_version,
             preemptible_tries = preemptibles,
             jobMemory = memory_gb_TrainModel,

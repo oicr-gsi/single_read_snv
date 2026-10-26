@@ -123,6 +123,7 @@ task TrainModel {
     Array[String] features
     String base_file_name
     String docker
+    String temp_dir
     String modules = "apptainer/1.4.5"
     String pipeline_version
     Int preemptible_tries
@@ -155,7 +156,8 @@ task TrainModel {
     TINT=$(readlink -f ~{training_interval_list})
     TINTDIR=${TINT%/*}
   
-    PARENT_DIR="$(realpath "$PWD/..")"
+    PARENT_DIR="$(realpath "$PWD/..")"a
+    export APPTAINER_TMPDIR=~{temp_dir}
      
     apptainer exec \
       --bind ${PWD}:${PWD} \
